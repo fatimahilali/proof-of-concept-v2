@@ -1,6 +1,12 @@
 {% for product in producten %}
   <div>
     <h2>{{ product.name }}</h2>
-    <img src="{{ product.image }}" alt="{{ product.name }}">
+    <img
+      src="{{ product.image }}"
+      alt="{{ product.name }}"
+      width="{{ product.img.width }}"
+      height="{{ product.img.height }}"
+      class="product-image"
+      loading="lazy">
   </div>
 {% endfor %}

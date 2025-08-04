@@ -1,3 +1,9 @@
+// Bronnen:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+
 
 // Importeer het npm package Express (uit de door npm aangemaakte node_modules map)
 // Deze package is geïnstalleerd via `npm install`, en staat als 'dependency' in package.json
@@ -25,15 +31,39 @@ app.engine('liquid', engine.express())
 app.set('views', './views')
 
 
-// Haal de titel en image op
-app.get('/', async function (request, response) {
-    const productResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=name,image&sort=id')
-    const productData = await productResponse.json()
+
+// Haal de naam en image op
+app.get('/', async function (req, res) {
+  try {
+    // Vraag de data op van de API
+    const apiResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=name,image,img.width,img.height&sort=id');
     
-    response.render('index.liquid', {productList: productData.data})
-  })
+    // Controleer of het antwoord van de API goed is
+    if (!apiResponse.ok) {
+      throw new Error(`API gaf een fout: ${apiResponse.status} ${apiResponse.statusText}`);
+    }
+    
+    // Zet de response om naar JSON
+    const productData = await apiResponse.json();
+    
+    // Controleer of de data bestaat
+    if (!productData || !productData.data) {
+      throw new Error('Geen productdata ontvangen van de API.');
+    }
+    
+    // Render de indexpagina met de data
+    res.render('index.liquid', { productList: productData.data });
+    
+  } catch (error) {
+    // Log de fout in de console
+    console.error('Fout bij ophalen producten:', error.message);
+    
+    // Stuur  foutmelding
+    res.status(500).send('Er ging iets mis bij het ophalen van de producten.');
+  }
+});
 
-
+  
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
 app.set('port', process.env.PORT || 8000)
