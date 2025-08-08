@@ -133,7 +133,80 @@
             </p>
           </header>
 
-          
+
+
+          <!-- Zoekformulier -->
+          <form
+            class="gift-search-form"
+            method="get"
+            action="/zoeken">
+            <!-- Voor wie is het cadeau -->
+            <fieldset class="form-group">
+              <legend class="visually-hidden">Persoon selectie</legend>
+              <label for="persoon" class="form-label">Voor wie zoek je?</label>
+              <select
+                id="persoon"
+                name="persoon"
+                class="form-select"
+                required>
+                <option value="">Selecteer persoon</option>
+                <option value="partner">Mijn partner</option>
+                <option value="vriend">Beste vriend(in)</option>
+                <option value="familie">Familielid</option>
+                <option value="collega">Collega</option>
+                <option value="kind">Kind</option>
+              </select>
+            </fieldset>
+
+            <!-- Gelegenheid -->
+            <fieldset class="form-group">
+              <legend class="visually-hidden">Gelegenheid selectie</legend>
+              <label for="gelegenheid" class="form-label">Wat is de gelegenheid?</label>
+              <select
+                id="gelegenheid"
+                name="gelegenheid"
+                class="form-select"
+                required>
+                <option value="">Kies gelegenheid</option>
+                <option value="verjaardag">Verjaardag</option>
+                <option value="jubileum">Jubileum</option>
+                <option value="kerst">Kerst</option>
+                <option value="valentijn">Valentijnsdag</option>
+                <option value="afstuderen">Afstuderen</option>
+                <option value="zomaar">Zomaar</option>
+              </select>
+            </fieldset>
+
+            <!-- Budget -->
+            <fieldset class="form-group">
+              <legend class="visually-hidden">Budget selectie</legend>
+              <label for="budget" class="form-label">Budget</label>
+              <select
+                id="budget"
+                name="budget"
+                class="form-select">
+                <option value="">Geen voorkeur</option>
+                <option value="0-25">€0 - €25</option>
+                <option value="25-50">€25 - €50</option>
+                <option value="50-100">€50 - €100</option>
+                <option value="100-250">€100 - €250</option>
+                <option value="250+">€250+</option>
+              </select>
+            </fieldset>
+
+            <!-- Persoonlijke beschrijving -->
+            <fieldset class="form-group">
+              <legend class="visually-hidden">Persoonlijke beschrijving</legend>
+              <label for="beschrijving" class="form-label">Vertel meer over deze persoon</label>
+              <input
+                type="text"
+                id="beschrijving"
+                name="beschrijving"
+                class="form-input"
+                placeholder="bijv. houdt van koken, reizen, tech...">
+            </fieldset>
+
+         
 
 {% for product in producten %}
   <div>
