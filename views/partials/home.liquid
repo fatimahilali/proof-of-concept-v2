@@ -1,21 +1,30 @@
 <!-- Hoofdnavigatie / header -->
-<header class="site-header">
-
-  <!-- Uitlijning en spacing in de header -->
-  <div class="header-content">
-
-    <!-- Logo-sectie met merknaam en slogan -->
-    <div class="logo">
-
-      <!-- Link naar de homepage -->
-      <a href="/" class="logo-link">
-
-        <!-- Container voor logo afbeelding, naam en slogan -->
-        <div class="logo-title">
-
-        </div>
-
-
+<div class="header-content">
+  <!-- Logo-sectie  -->
+  <div class="logo">
+    <!-- Link naar de homepage -->
+    <a href="/" class="logo-link">
+      <!-- Container voor logo afbeelding, naam en slogan -->
+      <div class="logo-title">
+        <p class="logo-text">
+          <!-- responsive image logo -->
+          <picture class="logo-image">
+            <source srcset="/assets/images/logo.avif" type="image/avif">
+            <source srcset="/assets/images/logo.webp" type="image/webp">
+            <img
+              src="/assets/images/logo.png"
+              alt="Milledoni logo"
+              width="80"
+              height="80">
+          </picture>
+          ILLEDONI
+        </p>
+        <!-- Slogan -->
+        <p class="logo-subtitle">Ontdek perfecte cadeaus</p>
+      </div>
+    </a>
+  </div>
+</div>
 
 {% for product in producten %}
   <div>
