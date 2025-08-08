@@ -1,3 +1,4 @@
+
 <!-- Hoofdnavigatie / header -->
 <div class="header-content">
 
@@ -91,8 +92,12 @@
     </picture>
   </figure>
 
+  <!-- bron:https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data-->
+
 
   <!-- Statistieken over de website -->
+
   <dl class="hero-stats">
 
     <div class="stat-item">
@@ -134,7 +139,11 @@
           </header>
 
 
-
+    <!-- bron: 
+     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
+     https://webaim.org/articles/forms/
+     -->
           <!-- Zoekformulier -->
           <form
             class="gift-search-form"
@@ -212,6 +221,81 @@
               <span class="loading-spinner"></span>
             </button>
           </form>
+
+<!-- bron:https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes -->
+
+ <!-- filter sectie voor populaire categorieën -->
+  <section class="quick-filters"> 
+  <!-- Sectie titel voor filter categorieën -->
+  <h3 class="filters-title">Populaire categorieën</h3>
+  
+  <!-- Container voor filter buttons -->
+  <div class="filter-tags">
+    <!-- Trending filter -->
+    <button
+      type="button"
+      class="filter-tag active"
+      data-filter="trending">Trending</button>
+    
+    <!-- Luxe categoriefilter -->
+    <button
+      type="button"
+      class="filter-tag"
+      data-filter="luxe">Luxe</button>
+    
+    <!-- Creatieve cadeaus filter -->
+    <button
+      type="button"
+      class="filter-tag"
+      data-filter="creatief">Creatief</button>
+    
+    <!-- Eetbare cadeaus filter -->
+    <button
+      type="button"
+      class="filter-tag"
+      data-filter="eetbaar">Eetbaar</button>
+    
+    <!-- Woonartikelen filter -->
+    <button
+      type="button"
+      class="filter-tag"
+      data-filter="wonen">Wonen</button>
+    
+    <!-- Snel verkrijgbare cadeaus filter -->
+    <button
+      type="button"
+      class="filter-tag"
+      data-filter="last-minute">Last-minute</button>
+  </div>
+</section>
+
+
+
+<!-- Community sectie: bevat avatars, tekst en call to action knop -->
+<section class="community-section">
+
+  <!-- Container met community avatars  -->
+  <div class="community-avatars">
+    <!-- Individuele avatar  -->
+    <div class="avatar">A</div>
+    <div class="avatar">S</div>
+    <div class="avatar">M</div>
+    <div class="avatar">L</div>
+
+    <!--  geeft aantal  leden  -->
+    <div class="avatar">+2K</div>
+  </div>
+
+  <!-- Beschrijving van de community -->
+  <p class="community-text">Sluit je aan bij onze community van cadeauliefhebbers</p>
+
+  <!-- Knop naar registratie/aanmeldpagina voor Spotters -->
+  <a href="/word-spotter" class="btn btn-primary community-btn">Word Spotter</a>
+
+</section>
+
+</article>
+</aside>
 
 
 {% for product in producten %}
