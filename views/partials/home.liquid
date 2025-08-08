@@ -19,7 +19,7 @@
             <source srcset="/assets/images/logo.avif" type="image/avif">
             <!-- WebP formaat als fallback -->
             <source srcset="/assets/images/logo.webp" type="image/webp">
-            <!-- PNG formaat als universele fallback -->
+            <!-- PNG formaat als  fallback -->
             <img
               src="/assets/images/logo.png"
               alt="Milledoni logo"
@@ -328,7 +328,6 @@
                 <div class="stat-item">
                   <dt class="stat-icon">❤️</dt>
 
-
                   <!--  Empty state -->
                   <dd class="{% if product.saves == 0 %}empty-state{% endif %}">
                     {% if product.saves > 0 %}
@@ -339,7 +338,6 @@
                   </dd>
 
                 </div>
-
               </dl>
             </div>
           </footer>
@@ -348,3 +346,26 @@
     </div>
   </section>
 </div>
+
+    <!-- Call to action sectie -->
+    <section class="cta-section">
+
+      <!-- Kaartstijl container voor de call to action inhoud -->
+      <article class="cta-card">
+        <header>
+          <h2>Maak een cadeau lijst en deel het!</h2>
+          <p class="cta-description">
+            Help vrienden en familie het perfecte cadeau voor jou te vinden 
+            door je wensen te delen
+          </p>
+        </header>
+
+            <!-- actieknop die de gebruiker naar de Maak Lijst pagina stuurt -->
+        <a href="/maak-lijst" class="cta-btn">Maak een Lijst</a>
+      </article>
+    </section>
+  </div>
+</main>
+
+
+
