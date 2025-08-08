@@ -82,7 +82,25 @@
         geselecteerd door onze community van cadeauexperts.
       </p>
 
-      
+
+  <!-- Decoratieve afbeelding -->
+  <figure class="hero-image">
+  <picture>
+    <!-- AVIF voor moderne browsers -->
+    <source srcset="/assets/images/hand.avif" type="image/avif">
+    <!-- WebP als fallback -->
+    <source srcset="/assets/images/hand.webp" type="image/webp">
+    <!-- PNG als  fallback -->
+    <img 
+      src="/assets/images/hand.png" 
+      alt="Hand die een cadeau aanbiedt"
+      width="300"
+      height="300"
+    ">
+  </picture>
+</figure>
+
+
 
 {% for product in producten %}
   <div>
