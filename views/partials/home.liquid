@@ -298,15 +298,21 @@
 </aside>
 
 
-{% for product in producten %}
-  <div>
-    <h2>{{ product.name }}</h2>
-    <img
-      src="{{ product.image }}"
-      alt="{{ product.name }}"
-      width="{{ product.img.width }}"
-      height="{{ product.img.height }}"
-      class="product-image"
-      loading="lazy">
-  </div>
-{% endfor %}
+<div class="products-grid">
+  <!-- Liquid template voor dynamische producten -->
+
+  {% for product in productList %}
+  <!-- Productkaart voor één individueel product -->
+    <article class="product-card">
+
+       <!-- Dynamische productafbeelding met alt tekst voor toegankelijkheid -->
+      <figure class="product-image">
+        <img
+          src="{{ product.image }}"
+          alt="{{ product.name }}"
+          width="{{ product.img.width }}"
+          height="{{ product.img.height }}"
+          class="product-image"
+          loading="lazy">
+      </figure>
+
