@@ -17,6 +17,7 @@ body {
   --text-muted: #64748b;
   --text-label: #374151;
   --accent-red: #ef4444;
+  --color:rgb(255, 255, 255);
   
   /* Gradiënten */
   --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
