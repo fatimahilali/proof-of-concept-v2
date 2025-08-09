@@ -60,296 +60,308 @@
 <nav class="user-actions">
   <a href="/mijn-lijst" class="btn btn-secondary">Mijn Lijst</a>
   <a href="/inloggen" class="btn btn-primary">Inloggen</a>
-</nav></div></header><!-- Hoofd inhoud container --><main class="main-content"><!-- Buitenste layout container --><div class="container">
-
-<!-- Hero sectie met introductie -->
-<section class="hero">
-  <!-- Titel van de pagina -->
-  <h1>Ontdek het perfecte cadeau</h1>
-
-  <!-- Beschrijving -->
-  <p class="hero-description">
-    Vind unieke en persoonlijke cadeaus die écht indruk maken, 
-    geselecteerd door onze community van cadeauexperts.
-  </p>
-
-
-  <!-- Decoratieve afbeelding -->
-  <figure class="hero-image">
-    <picture>
-      <!-- AVIF voor moderne browsers -->
-      <source srcset="/assets/images/hand.avif" type="image/avif">
-      <!-- WebP als fallback -->
-      <source srcset="/assets/images/hand.webp" type="image/webp">
-      <!-- PNG als  fallback -->
-      <img
-        src="/assets/images/hand.png"
-        alt="Hand die een cadeau aanbiedt"
-        width="300"
-        height="300"
-        ">
-    </picture>
-  </figure>
-
-  <!-- bron:https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl
-  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data--><!-- Statistieken over de website -->
-
-  <dl class="hero-stats">
-
-    <div class="stat-item">
-      <dt class="stat-label">Cadeaus ontdekt</dt>
-      <dd class="stat-number">
-        <data value="25000">25K+</data>
-      </dd>
-    </div>
-
-    <div class="stat-item">
-      <dt class="stat-label">Actieve spotters</dt>
-      <dd class="stat-number">
-        <data value="4200">4.2K</data>
-      </dd>
-    </div>
-
-    <div class="stat-item">
-      <dt class="stat-label">Tevreden gebruikers</dt>
-      <dd class="stat-number">
-        <data value="98">98%</data>
-      </dd>
-    </div>
-  </dl>
-</section>
-
-<!-- Hoofdlay-out met zoekpaneel en producten -->
-<div class="content-layout">
-
-  <!-- Zoek en filter paneel -->
-  <aside class="search-sidebar">
-    <article class="search-card">
-
-      <!-- Kop en beschrijving van het zoekpaneel -->
-      <header>
-        <h2>🎁Ik zoek een cadeau voor...</h2>
-        <p class="search-subtitle">
-          Laat ons je helpen het perfecte cadeau te vinden
-        </p>
-      </header>
-
-
-      <!-- bron: 
-      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
-      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
-      https://webaim.org/articles/forms/
-      -->
-      <!-- Zoekformulier -->
-      <form
-        class="gift-search-form"
-        method="get"
-        action="/zoeken">
-        <!-- Voor wie is het cadeau -->
-        <fieldset class="form-group">
-          <legend class="visually-hidden">Persoon selectie</legend>
-          <label for="persoon" class="form-label">Voor wie zoek je?</label>
-          <select
-            id="persoon"
-            name="persoon"
-            class="form-select"
-            required>
-            <option value="">Selecteer persoon</option>
-            <option value="partner">Mijn partner</option>
-            <option value="vriend">Beste vriend(in)</option>
-            <option value="familie">Familielid</option>
-            <option value="collega">Collega</option>
-            <option value="kind">Kind</option>
-          </select>
-        </fieldset>
-
-        <!-- Gelegenheid -->
-        <fieldset class="form-group">
-          <legend class="visually-hidden">Gelegenheid selectie</legend>
-          <label for="gelegenheid" class="form-label">Wat is de gelegenheid?</label>
-          <select
-            id="gelegenheid"
-            name="gelegenheid"
-            class="form-select"
-            required>
-            <option value="">Kies gelegenheid</option>
-            <option value="verjaardag">Verjaardag</option>
-            <option value="jubileum">Jubileum</option>
-            <option value="kerst">Kerst</option>
-            <option value="valentijn">Valentijnsdag</option>
-            <option value="afstuderen">Afstuderen</option>
-            <option value="zomaar">Zomaar</option>
-          </select>
-        </fieldset>
-
-        <!-- Budget -->
-        <fieldset class="form-group">
-          <legend class="visually-hidden">Budget selectie</legend>
-          <label for="budget" class="form-label">Budget</label>
-          <select
-            id="budget"
-            name="budget"
-            class="form-select">
-            <option value="">Geen voorkeur</option>
-            <option value="0-25">€0 - €25</option>
-            <option value="25-50">€25 - €50</option>
-            <option value="50-100">€50 - €100</option>
-            <option value="100-250">€100 - €250</option>
-            <option value="250+">€250+</option>
-          </select>
-        </fieldset>
-
-        <!-- Persoonlijke beschrijving -->
-        <fieldset class="form-group">
-          <legend class="visually-hidden">Persoonlijke beschrijving</legend>
-          <label for="beschrijving" class="form-label">Vertel meer over deze persoon</label>
-          <input
-            type="text"
-            id="beschrijving"
-            name="beschrijving"
-            class="form-input"
-            placeholder="bijv. houdt van koken, reizen, tech...">
-        </fieldset>
-
-        <!-- Zoek knop loading state -->
-        <button type="submit" class="search-btn">
-          <span class="btn-text">Vind Perfecte Cadeaus</span>
-          <span class="loading-spinner"></span>
-        </button>
-      </form>
-
-      <!-- bron:https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes -->
-
-      <!-- filter sectie voor populaire categorieën -->
-      <section class="quick-filters">
-        <!-- Sectie titel voor filter categorieën -->
-        <h3 class="filters-title">Populaire categorieën</h3>
-
-        <!-- Container voor filter buttons -->
-        <div class="filter-tags">
-          <!-- Trending filter -->
-          <button
-            type="button"
-            class="filter-tag active"
-            data-filter="trending">Trending</button>
-
-          <!-- Luxe categoriefilter -->
-          <button
-            type="button"
-            class="filter-tag"
-            data-filter="luxe">Luxe</button>
-
-          <!-- Creatieve cadeaus filter -->
-          <button
-            type="button"
-            class="filter-tag"
-            data-filter="creatief">Creatief</button>
-
-          <!-- Eetbare cadeaus filter -->
-          <button
-            type="button"
-            class="filter-tag"
-            data-filter="eetbaar">Eetbaar</button>
-
-          <!-- Woonartikelen filter -->
-          <button
-            type="button"
-            class="filter-tag"
-            data-filter="wonen">Wonen</button>
-
-          <!-- Snel verkrijgbare cadeaus filter -->
-          <button
-            type="button"
-            class="filter-tag"
-            data-filter="last-minute">Last-minute</button>
-        </div>
-      </section>
+</nav>
 
 
 
-      <!-- Community sectie: bevat avatars, tekst en call to action knop -->
-      <section class="community-section">
+<!-- Hoofd inhoud container -->
+<main class="main-content">
 
-        <!-- Container met community avatars  -->
-        <div class="community-avatars">
-          <!-- Individuele avatar  -->
-          <div class="avatar">A</div>
-          <div class="avatar">S</div>
-          <div class="avatar">M</div>
-          <div class="avatar">L</div>
+  <!-- Buitenste layout container -->
+  <div class="container">
 
-          <!--  geeft aantal  leden  -->
-          <div class="avatar">+2K</div>
+    <!-- Hero sectie met introductie -->
+    <section class="hero">
+      <!-- Titel van de pagina -->
+      <h1>Ontdek het perfecte cadeau</h1>
+
+      <!-- Beschrijving -->
+      <p class="hero-description">
+        Vind unieke en persoonlijke cadeaus die écht indruk maken, 
+        geselecteerd door onze community van cadeauexperts.
+      </p>
+
+
+      <!-- Decoratieve afbeelding -->
+      <figure class="hero-image">
+        <picture>
+          <!-- AVIF voor moderne browsers -->
+          <source srcset="/assets/images/hand.avif" type="image/avif">
+          <!-- WebP als fallback -->
+          <source srcset="/assets/images/hand.webp" type="image/webp">
+          <!-- PNG als  fallback -->
+          <img
+            src="/assets/images/hand.png"
+            alt="Hand die een cadeau aanbiedt"
+            width="300"
+            height="300">
+        </picture>
+      </figure>
+
+      <!-- bron:https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data-->
+      <!-- Statistieken over de website -->
+
+      <dl class="hero-stats">
+
+        <div class="stat-item">
+          <dt class="stat-label">Cadeaus ontdekt</dt>
+          <dd class="stat-number">
+            <data value="25000">25K+</data>
+          </dd>
         </div>
 
-        <!-- Beschrijving van de community -->
-        <p class="community-text">Sluit je aan bij onze community van cadeauliefhebbers</p>
+        <div class="stat-item">
+          <dt class="stat-label">Actieve spotters</dt>
+          <dd class="stat-number">
+            <data value="4200">4.2K</data>
+          </dd>
+        </div>
 
-        <!-- Knop naar registratie/aanmeldpagina voor Spotters -->
-        <a href="/word-spotter" class="btn btn-primary community-btn">Word Spotter</a>
+        <div class="stat-item">
+          <dt class="stat-label">Tevreden gebruikers</dt>
+          <dd class="stat-number">
+            <data value="98">98%</data>
+          </dd>
+        </div>
+      </dl>
+    </section>
 
-      </section>
+    <!-- Hoofdlay-out met zoekpaneel en producten -->
+    <div class="content-layout">
 
-    </article>
-  </aside>
+      <!-- Zoek en filter paneel -->
+      <aside class="search-sidebar">
+        <article class="search-card">
 
-  <!-- Producten overzicht -->
-  <section class="products-section">
-    <h4 class="visually-hidden">Cadeau suggesties</h4>
+          <!-- Kop en beschrijving van het zoekpaneel -->
+          <header>
+            <h2>🎁Ik zoek een cadeau voor...</h2>
+            <p class="search-subtitle">
+              Laat ons je helpen het perfecte cadeau te vinden
+            </p>
+          </header>
 
 
-    <div class="products-grid">
-      <!-- Liquid template voor dynamische producten -->
-      {% for product in producten %}
+          <!-- bron: 
+          https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+          https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
+          https://webaim.org/articles/forms/
+          -->
+          <!-- Zoekformulier -->
+          <form
+            class="gift-search-form"
+            method="get"
+            action="/zoeken">
+            <!-- Voor wie is het cadeau -->
+            <fieldset class="form-group">
+              <legend class="visually-hidden">Persoon selectie</legend>
+              <label for="persoon" class="form-label">Voor wie zoek je?</label>
+              <select
+                id="persoon"
+                name="persoon"
+                class="form-select"
+                required>
+                <option value="">Selecteer persoon</option>
+                <option value="partner">Mijn partner</option>
+                <option value="vriend">Beste vriend(in)</option>
+                <option value="familie">Familielid</option>
+                <option value="collega">Collega</option>
+                <option value="kind">Kind</option>
+              </select>
+            </fieldset>
 
-        <!-- Productkaart voor één individueel product -->
-        <article class="product-card">
+            <!-- Gelegenheid -->
+            <fieldset class="form-group">
+              <legend class="visually-hidden">Gelegenheid selectie</legend>
+              <label for="gelegenheid" class="form-label">Wat is de gelegenheid?</label>
+              <select
+                id="gelegenheid"
+                name="gelegenheid"
+                class="form-select"
+                required>
+                <option value="">Kies gelegenheid</option>
+                <option value="verjaardag">Verjaardag</option>
+                <option value="jubileum">Jubileum</option>
+                <option value="kerst">Kerst</option>
+                <option value="valentijn">Valentijnsdag</option>
+                <option value="afstuderen">Afstuderen</option>
+                <option value="zomaar">Zomaar</option>
+              </select>
+            </fieldset>
 
-          <!-- Dynamische productafbeelding met alt tekst voor toegankelijkheid -->
-          <figure class="product-image">
-            <img
-              src="{{ product.image }}"
-              alt="{{ product.name }}"
-              width="{{ product.img.width }}"
-              height="{{ product.img.height }}"
-              class="product-image"
-              loading="lazy">
-          </figure>
+            <!-- Budget -->
+            <fieldset class="form-group">
+              <legend class="visually-hidden">Budget selectie</legend>
+              <label for="budget" class="form-label">Budget</label>
+              <select
+                id="budget"
+                name="budget"
+                class="form-select">
+                <option value="">Geen voorkeur</option>
+                <option value="0-25">€0 - €25</option>
+                <option value="25-50">€25 - €50</option>
+                <option value="50-100">€50 - €100</option>
+                <option value="100-250">€100 - €250</option>
+                <option value="250+">€250+</option>
+              </select>
+            </fieldset>
 
-          <footer class="product-info">
+            <!-- Persoonlijke beschrijving -->
+            <fieldset class="form-group">
+              <legend class="visually-hidden">Persoonlijke beschrijving</legend>
+              <label for="beschrijving" class="form-label">Vertel meer over deze persoon</label>
+              <input
+                type="text"
+                id="beschrijving"
+                name="beschrijving"
+                class="form-input"
+                placeholder="bijv. houdt van koken, reizen, tech...">
+            </fieldset>
 
-            <!-- Productnaam als kop -->
-            <h3 class="product-title">{{ product.name }}</h3>
+            <!-- Zoek knop loading state -->
+            <button type="submit" class="search-btn">
+              <span class="btn-text">Vind Perfecte Cadeaus</span>
+              <span class="loading-spinner"></span>
+            </button>
+          </form>
 
-            <!--  container voor productstatistieken -->
-            <div class="product-stats">
-              <dl>
-                <!--  aantal saves -->
-                <div class="stat-item">
-                  <dt class="stat-icon">❤️</dt>
+          <!-- bron:https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes -->
 
-                  <!--  Empty state -->
-                  <dd class="{% if product.saves == 0 %}empty-state{% endif %}">
-                    {% if product.saves > 0 %}
-                      {{ product.saves }} saves
-                    {% else %}
-                      Nog geen saves
-                    {% endif %}
-                  </dd>
+          <!-- filter sectie voor populaire categorieën -->
+          <section class="quick-filters">
+            <!-- Sectie titel voor filter categorieën -->
+            <h3 class="filters-title">Populaire categorieën</h3>
 
-                </div>
-              </dl>
+            <!-- Container voor filter buttons -->
+            <div class="filter-tags">
+              <!-- Trending filter -->
+              <button
+                type="button"
+                class="filter-tag active"
+                data-filter="trending">Trending</button>
+
+              <!-- Luxe categoriefilter -->
+              <button
+                type="button"
+                class="filter-tag"
+                data-filter="luxe">Luxe</button>
+
+              <!-- Creatieve cadeaus filter -->
+              <button
+                type="button"
+                class="filter-tag"
+                data-filter="creatief">Creatief</button>
+
+              <!-- Eetbare cadeaus filter -->
+              <button
+                type="button"
+                class="filter-tag"
+                data-filter="eetbaar">Eetbaar</button>
+
+              <!-- Woonartikelen filter -->
+              <button
+                type="button"
+                class="filter-tag"
+                data-filter="wonen">Wonen</button>
+
+              <!-- Snel verkrijgbare cadeaus filter -->
+              <button
+                type="button"
+                class="filter-tag"
+                data-filter="last-minute">Last-minute</button>
             </div>
-          </footer>
+          </section>
+
+
+
+          <!-- Community sectie: bevat avatars, tekst en call to action knop -->
+          <section class="community-section">
+            <!-- Verborgen kop voor toegankelijkheid -->
+            <h4 class="visually-hidden">Community</h4>
+
+            <!-- Container met community avatars  -->
+            <div class="community-avatars">
+              <!-- Individuele avatar  -->
+              <div class="avatar">A</div>
+              <div class="avatar">S</div>
+              <div class="avatar">M</div>
+              <div class="avatar">L</div>
+
+              <!--  geeft aantal  leden  -->
+              <div class="avatar">+2K</div>
+            </div>
+
+            <!-- Beschrijving van de community -->
+            <p class="community-text">Sluit je aan bij onze community van cadeauliefhebbers</p>
+
+            <!-- Knop naar registratie/aanmeldpagina voor Spotters -->
+            <a href="/word-spotter" class="btn btn-primary community-btn">Word Spotter</a>
+
+          </section>
+
         </article>
-      {% endfor %}
+      </aside>
+
+      <!-- Producten overzicht -->
+      <section class="products-section">
+        <h4 class="visually-hidden">Cadeau suggesties</h4>
+
+
+        <div class="products-grid">
+          <!-- Liquid template voor dynamische producten -->
+          {% for product in producten %}
+
+            <!-- Productkaart voor één individueel product -->
+            <article class="product-card">
+
+              <!-- Dynamische productafbeelding met alt tekst voor toegankelijkheid -->
+              <figure class="product-image">
+                <img
+                  src="{{ product.image }}"
+                  alt="{{ product.name }}"
+                  width="{{ product.img.width }}"
+                  height="{{ product.img.height }}"
+                  class="product-image"
+                  loading="lazy">
+              </figure>
+
+              <footer class="product-info">
+
+                <!-- Productnaam als kop -->
+                <h3 class="product-title">{{ product.name }}</h3>
+
+                <!--  container voor productstatistieken -->
+                <div class="product-stats">
+                  <dl>
+                    <!--  aantal saves -->
+                    <div class="stat-item">
+                      <dt class="stat-icon">❤️</dt>
+
+                      <!--  Empty state -->
+                      <dd class="{% if product.saves == 0 %}empty-state{% endif %}">
+                        {% if product.saves > 0 %}
+                          {{ product.saves }} saves
+                        {% else %}
+                          Nog geen saves
+                        {% endif %}
+                      </dd>
+
+                    </div>
+                  </dl>
+                </div>
+              </footer>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
     </div>
-  </section>
-</div>
 
     <!-- Call to action sectie -->
     <section class="cta-section">
 
+      <!-- Verborgen kop voor toegankelijkheid -->
+      <h4 class="visually-hidden">Call to Action</h4>
       <!-- Kaartstijl container voor de call to action inhoud -->
       <article class="cta-card">
         <header>
@@ -360,12 +372,9 @@
           </p>
         </header>
 
-            <!-- actieknop die de gebruiker naar de Maak Lijst pagina stuurt -->
+        <!-- actieknop die de gebruiker naar de Maak Lijst pagina stuurt -->
         <a href="/maak-lijst" class="cta-btn">Maak een Lijst</a>
       </article>
     </section>
   </div>
 </main>
-
-
-
