@@ -1,0 +1,103 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+/* ACHTERGROND */
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  /* HEADER SECTIE MOBILE FIRST */
+  .site-header {
+    backdrop-filter: var(--blur-lg);
+    background: var(--bg-overlay);
+    border-bottom: 0.0625rem solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .header-content {
+    max-width: 87.5rem;
+    margin: 0 auto;
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+  
+  /* Logo styling - Mobile first */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+  }
+  
+  .logo-link {
+    text-decoration: none;
+  }
+  
+  .logo-symbol {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-weight: var(--weight-extrabold);
+    font-size: var(--font-base);
+    box-shadow: var(--shadow-primary);
+    transition: var(--transition);
+  }
+  
+  .logo:hover .logo-symbol {
+    transform: scale(1.05) rotate(3deg);
+  }
+  
+  .logo-text {
+    font-size: var(--font-2xl);
+    font-weight: var(--weight-extrabold);
+    display: flex;
+    align-items: baseline;
+    gap: 0.1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+  }
+  
+  .logo-image {
+    width: 1.4em;
+    height: 1.6em;
+    object-fit: contain;
+    position: relative;
+    top: 0.25em;
+    margin-right: -0.5rem;
+  }
+  
+  .logo-subtitle {
+    font-size: var(--font-xs);
+    color: var(--text-muted);
+    font-weight: var(--weight-medium);
+    margin-top: 0.125rem;
+    margin-left: var(--space-2);
+    display: none;
+  }
+

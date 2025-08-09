@@ -1,0 +1,99 @@
+
+/* MILLEDONI: custom properties */
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(ellipse at top, #e0e7ff 0%, #f3f4f6 50%, #fef3c7 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  
+  /* KLEUREN */
+  --primary: #8b5cf6;
+  --secondary: #3b82f6;
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-muted: #64748b;
+  --text-label: #374151;
+  --accent-red: #ef4444;
+  
+  /* Gradiënten */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --gradient-text: linear-gradient(135deg, #1e293b 0%, var(--primary) 50%, var(--secondary) 100%);
+  
+  /* Achtergronden */
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --bg-glass-strong: rgba(255, 255, 255, 0.9);
+  --bg-overlay: rgba(255, 255, 255, 0.8);
+  
+  /* Borders */
+  --border-light: rgba(255, 255, 255, 0.2);
+  --border-glass: rgba(255, 255, 255, 0.3);
+  --border-primary: rgba(139, 92, 246, 0.1);
+  --border-primary-hover: rgba(139, 92, 246, 0.3);
+  --border-focus: #8b5cf6;
+  
+  /* SPACING */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  
+  /* TYPOGRAPHY */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.75rem;
+  --font-4xl: 2rem;
+  --font-5xl: 2.25rem;
+  
+  /* Font weights */
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+  
+  /* BORDER RADIUS */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  
+  /* SHADOWS */
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  --shadow-primary: 0 0.25rem 1rem rgba(139, 92, 246, 0.3);
+  --shadow-primary-hover: 0 0.75rem 2.5rem rgba(139, 92, 246, 0.4);
+  
+  /* BLUR */
+  --blur-sm: blur(0.625rem);
+  --blur-md: blur(1rem);
+  --blur-lg: blur(1.25rem);
+  --blur-xl: blur(1.875rem);
+  
+  /* TRANSITIONS */
+  --transition: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
+  --transition-slow: all 0.5s ease;
+  
+  /* BREAKPOINTS */
+  --mobile: 20rem; /* 320px */
+  --tablet: 48rem; /* 768px */
+  --desktop: 64rem; /* 1024px */
+  --wide: 80rem; /* 1280px */
+}
