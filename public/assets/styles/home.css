@@ -259,7 +259,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeInUp 1s ease-out;
 }
 
 .hero-image img {
@@ -281,5 +280,105 @@
   gap: var(--space-8);
   margin: var(--space-12) 0;
   align-items: start;
+}
+
+
+/* ZOEK PANEEL MOBILE FIRST */
+.search-sidebar {
+  position: static;
+}
+
+.search-card {
+  background: var(--bg-glass);
+  backdrop-filter: var(--blur-xl);
+  border: 0.0625rem solid var(--border-glass);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  box-shadow: 0 1.25rem 4rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.search-card h2 {
+  font-size: var(--font-3xl);
+  font-weight: var(--weight-extrabold);
+  margin-bottom: var(--space-2);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.search-subtitle {
+  color: var(--text-muted);
+  margin-bottom: var(--space-8);
+  font-size: var(--font-base);
+  font-weight: var(--weight-medium);
+}
+
+.gift-search-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Fieldset styling */
+.form-group {
+  position: relative;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-group legend {
+  display: none;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: var(--weight-bold);
+  color: var(--text-label);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  border: 0.125rem solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-base);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: var(--blur-sm);
+  transition: var(--transition);
+  color: var(--text-secondary);
+  font-weight: var(--weight-medium);
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 0.25rem rgba(139, 92, 246, 0.1);
+  background: var(--color);
+  transform: translateY(-0.125rem);
+}
+
+.search-btn {
+  padding: var(--space-5);
+  background: var(--gradient-primary);
+  color:var(--color);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-size: var(--font-base);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: var(--space-2);
+  box-shadow: 0 var(--space-2) 1.5rem rgba(139, 92, 246, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
