@@ -5,7 +5,6 @@
     box-sizing: border-box;
   }
   
-
 /* ACHTERGROND */
 .bg-animation {
     position: fixed;
@@ -101,3 +100,67 @@
     display: none;
   }
 
+/* Navigatie menu - Mobile first (hidden, show on desktop) */
+.main-nav .nav-list {
+  display: none;
+  list-style: none;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #475569;
+  font-weight: var(--weight-semibold);
+  transition: var(--transition);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-lg);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+/* Gebruiker acties in header - Mobile first */
+.user-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* KNOP STIJLEN MOBILE FIRST */
+.btn {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: var(--font-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary {
+  background: var(--bg-glass);
+  color: var(--text-muted);
+  border: 0.125rem solid var(--border-primary);
+  backdrop-filter: var(--blur-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-glass-strong);
+  border-color: var(--border-primary-hover);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 var(--space-2) 1.5625rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-primary);
+}
