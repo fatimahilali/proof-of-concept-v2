@@ -93,9 +93,5 @@ body {
   --transition-fast: all 0.15s ease;
   --transition-slow: all 0.5s ease;
   
-  /* BREAKPOINTS */
-  --mobile: 20rem; /* 320px */
-  --tablet: 48rem; /* 768px */
-  --desktop: 64rem; /* 1024px */
-  --wide: 80rem; /* 1280px */
+
 }

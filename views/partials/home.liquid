@@ -1,66 +1,67 @@
 <!-- Hoofdnavigatie / header -->
-<div class="header-content">
+<header class="site-header">
+  <div class="header-content">
 
-  <!-- Logo-sectie met naam en slogan -->
-  <div class="logo">
+    <!-- Logo-sectie met naam en slogan -->
+    <div class="logo">
 
-    <!-- Link naar de homepage (logo image klikbaar) -->
-    <a href="/" class="logo-link">
+      <!-- Link naar de homepage (logo image klikbaar) -->
+      <a href="/" class="logo-link">
 
-      <!-- Container voor logo afbeelding + naam + slogan -->
-      <div class="logo-title">
+        <!-- Container voor logo afbeelding + naam + slogan -->
+        <div class="logo-title">
 
-        <!-- naam ,slogan en logo afbeelding -->
-        <p class="logo-text">
+          <!-- naam ,slogan en logo afbeelding -->
+          <p class="logo-text">
+            <!-- Responsive logo afbeelding -->
+            <picture class="logo-image">
+              <!-- AVIF formaat voor moderne browsers -->
+              <source srcset="/assets/images/logo.avif" type="image/avif">
+              <!-- WebP formaat als fallback -->
+              <source srcset="/assets/images/logo.webp" type="image/webp">
+              <!-- PNG formaat als  fallback -->
+              <img
+                src="/assets/images/logo.png"
+                alt="Milledoni logo"
+                width="80"
+                height="80">
+            </picture>
+            ILLEDONI
+          </p>
 
-          <!-- Responsive logo afbeelding -->
-          <picture class="logo-image">
-            <!-- AVIF formaat voor moderne browsers -->
-            <source srcset="/assets/images/logo.avif" type="image/avif">
-            <!-- WebP formaat als fallback -->
-            <source srcset="/assets/images/logo.webp" type="image/webp">
-            <!-- PNG formaat als  fallback -->
-            <img
-              src="/assets/images/logo.png"
-              alt="Milledoni logo"
-              width="80"
-              height="80">
-          </picture>
-          ILLEDONI
-        </p>
+          <!-- Slogan -->
+          <p class="logo-subtitle">Ontdek perfecte cadeaus</p>
 
-        <!-- Slogan -->
-        <p class="logo-subtitle">Ontdek perfecte cadeaus</p>
+        </div>
+      </a>
+    </div>
 
-      </div>
-    </a>
+    <!-- Hoofdnavigatie menu -->
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li>
+          <a href="#ontdekken" class="nav-link">Ontdekken</a>
+        </li>
+        <li>
+          <a href="#categorieen" class="nav-link">Categorieën</a>
+        </li>
+        <li>
+          <a href="#spotters" class="nav-link">Spotters</a>
+        </li>
+        <li>
+          <a href="#inspiratie" class="nav-link">Inspiratie</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Acties van de gebruiker -->
+    <nav class="user-actions">
+      <a href="/mijn-lijst" class="btn btn-secondary">Mijn Lijst</a>
+      <a href="/inloggen" class="btn btn-primary">Inloggen</a>
+    </nav>
+
   </div>
-</div>
-
-
-<!-- Hoofdnavigatie menu -->
-<nav class="main-nav">
-  <ul class="nav-list">
-    <li>
-      <a href="#ontdekken" class="nav-link">Ontdekken</a>
-    </li>
-    <li>
-      <a href="#categorieen" class="nav-link">Categorieën</a>
-    </li>
-    <li>
-      <a href="#spotters" class="nav-link">Spotters</a>
-    </li>
-    <li>
-      <a href="#inspiratie" class="nav-link">Inspiratie</a>
-    </li>
-  </ul>
-</nav>
-
-<!-- Acties van de gebruiker -->
-<nav class="user-actions">
-  <a href="/mijn-lijst" class="btn btn-secondary">Mijn Lijst</a>
-  <a href="/inloggen" class="btn btn-primary">Inloggen</a>
-</nav>
+</header>
 
 
 

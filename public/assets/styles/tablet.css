@@ -1,0 +1,29 @@
+
+/* TABLET BREAKPOINT (768px) */
+@media (min-width: 48rem) {
+    .header-content {
+      padding: var(--space-6) var(--space-8);
+      flex-wrap: nowrap;
+      gap: 0;
+    }
+  
+    .logo {
+      gap: var(--space-4);
+    }
+  
+    .logo-text {
+        font-size: 2rem;
+      }
+  
+    .logo-subtitle {
+      font-size: var(--font-sm);
+      display: block;
+    }
+
+    .logo-image {
+        width: 1.4em;
+        height: 1.4em;
+       
+      }
+
+    }

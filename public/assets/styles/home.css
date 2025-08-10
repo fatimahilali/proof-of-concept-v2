@@ -1,106 +1,116 @@
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-/* ACHTERGROND */
-body {
-  background: radial-gradient(ellipse at top, #e0e7ff 0%, #f3f4f6 50%, #fef3c7 100%);
-  min-height: 100vh;
-  color: #0f172a;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
-  /* HEADER SECTIE MOBILE FIRST */
-  .site-header {
-    backdrop-filter: var(--blur-lg);
-    background: var(--bg-overlay);
-    border-bottom: 0.0625rem solid var(--border-light);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: var(--shadow-lg);
-  }
-  
-  .header-content {
-    max-width: 87.5rem;
-    margin: 0 auto;
-    padding: var(--space-4);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-  }
-  
-  /* Logo styling - Mobile first */
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    text-decoration: none;
-  }
-  
-  .logo-link {
-    text-decoration: none;
-  }
-  
 
-  
-  .logo-text {
-    font-size: var(--font-2xl);
-    font-weight: var(--weight-extrabold);
-    display: flex;
-    align-items: baseline;
-    gap: 0.1rem;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.02em;
-  }
-  
-  .logo-image {
-    width: 1.4em;
-    height: 1.6em;
-    object-fit: contain;
-    position: relative;
-    top: 0.25em;
-    margin-right: -0.5rem;
-  }
-  
-  .logo-subtitle {
-    font-size: var(--font-xs);
-    color: var(--text-muted);
-    font-weight: var(--weight-medium);
-    margin-top: 0.125rem;
-    margin-left: var(--space-2);
-    display: none;
-  }
+
+/* ACHTERGROND */
+body {
+background: radial-gradient(ellipse at top, #e0e7ff 0%, #f3f4f6 50%, #fef3c7 100%);
+min-height: 100vh;
+color: var(--text-primary);
+overflow-x: hidden;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* HEADER SECTIE MOBILE FIRST */
+.site-header {
+backdrop-filter: var(--blur-lg);
+background: var(--bg-overlay);
+border-bottom: 1px solid var(--border-light);
+position: sticky;
+top: 0;
+z-index: 100;
+box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+max-width: 1400px;
+margin: 0 auto;
+padding: var(--space-4);
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: var(--space-4);
+}
+
+/* Logo styling - Mobile first */
+.logo {
+display: flex;
+align-items: center;
+gap: var(--space-2);
+text-decoration: none;
+
+}
+
+.logo-link {
+text-decoration: none;
+}
+
+.logo-text {
+font-size: var(--font-1xl);
+font-weight: var(--weight-extrabold);
+display: flex;
+align-items: center;
+gap: 0.3rem;
+background: var(--gradient-primary);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+letter-spacing: -0.02em;
+}
+
+.logo-image {
+  width: 1.4em;
+  height: 1.6em;
+  object-fit: contain;
+  position: relative;
+  top: 0.25em;
+  margin-right: -0.5rem;
+}
+
+.logo-image img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+margin-top: -0.4rem;
+}
+
+.logo-subtitle {
+font-size: var(--font-xs);
+color: var(--text-muted);
+font-weight: var(--weight-medium);
+margin-top: 0.125rem;
+margin-left: var(--space-2);
+display: none;
+}
 
 /* Navigatie menu - Mobile first (hidden, show on desktop) */
 .main-nav .nav-list {
-  display: none;
-  list-style: none;
+display: none;
+list-style: none;
 }
 
 .nav-link {
-  position: relative;
-  text-decoration: none;
-  color: #475569;
-  font-weight: var(--weight-semibold);
-  transition: var(--transition);
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-lg);
+position: relative;
+text-decoration: none;
+color: var(--text-muted);
+font-weight: var(--weight-semibold);
+transition: var(--transition);
+padding: var(--space-2) var(--space-4);
+border-radius: var(--radius-lg);
 }
 
 .nav-link:hover {
-  color: var(--primary);
-  background: rgba(139, 92, 246, 0.05);
+color: var(--primary);
+background: rgba(139, 92, 246, 0.05);
 }
+
 
 /* Gebruiker acties in header - Mobile first */
 .user-actions {
