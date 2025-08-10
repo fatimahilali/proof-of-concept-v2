@@ -26,4 +26,28 @@
        
       }
 
-    }
+      .logo-image img {
+        margin-top: -1rem;
+        }
+
+    
+        .user-actions {
+          gap: var(--space-4);
+        }
+      
+        .btn {
+          padding: 0.875rem 1.75rem;
+          border-radius: var(--radius-xl);
+          font-size: 0.925rem;
+        }
+      
+        .btn-primary {
+          box-shadow: 0 var(--space-2) var(--space-8) rgba(139, 92, 246, 0.3);
+        }
+      
+        .container {
+          padding: 0 var(--space-8);
+        }
+      }
+
+      
