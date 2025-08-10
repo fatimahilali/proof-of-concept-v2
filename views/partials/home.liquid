@@ -316,13 +316,16 @@
             <!-- Productkaart voor één individueel product -->
             <article class="product-card">
 
+
               <!-- Dynamische productafbeelding met alt tekst voor toegankelijkheid -->
               <figure class="product-image">
+
+                <!-- bron: https://learndirectus.com/image-optimization-in-directus/ -->
                 <img
-                  src="{{ product.image }}"
+                  src="{{ product.image }}?width=400&format=webp&quality=80"
                   alt="{{ product.name }}"
-                  width="{{ product.img.width }}"
-                  height="{{ product.img.height }}"
+                  width="400"
+                  height="300"
                   class="product-image"
                   loading="lazy">
               </figure>

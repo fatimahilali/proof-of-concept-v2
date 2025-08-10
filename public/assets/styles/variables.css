@@ -1,13 +1,6 @@
-
 /* MILLEDONI: custom properties */
 
-
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(ellipse at top, #e0e7ff 0%, #f3f4f6 50%, #fef3c7 100%);
-  min-height: 100vh;
-  color: var(--text-primary);
-  overflow-x: hidden;
   
   /* KLEUREN */
   --primary: #8b5cf6;
@@ -93,5 +86,4 @@ body {
   --transition-fast: all 0.15s ease;
   --transition-slow: all 0.5s ease;
   
-
 }
