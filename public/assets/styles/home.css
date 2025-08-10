@@ -588,7 +588,7 @@ background: rgba(139, 92, 246, 0.05);
 
 .cta-btn {
   background: var(--color);
-  color: var(--primary);
+  color: rgb(68, 0, 255);
   padding: var(--space-4) var(--space-8);
   border-radius: var(--radius-xl);
   font-weight: var(--weight-bold);
