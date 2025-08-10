@@ -1,0 +1,19 @@
+
+  /* DESKTOP BREAKPOINT (1024px) */
+  @media (min-width: 64rem) {
+    .main-nav .nav-list {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+  
+    .content-layout {
+      grid-template-columns: 26.25rem 1fr;
+      gap: var(--space-16);
+    }
+  
+    .search-sidebar {
+      position: sticky;
+      top: 8.75rem;
+    }
+  } 
