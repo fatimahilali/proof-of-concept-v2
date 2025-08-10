@@ -95,4 +95,58 @@
           max-width: 16.25rem;
           filter: drop-shadow(0 0.625rem 1.875rem rgba(139, 92, 246, 0.3));
         }
+        .search-card {
+          border-radius: var(--radius-3xl);
+          padding: var(--space-12);
+        }
       
+        .search-card h2 {
+          font-size: var(--font-4xl);
+        }
+      
+        .search-subtitle {
+          margin-bottom: 2.5rem;
+          font-size: 1.05rem;
+        }
+      
+        .gift-search-form {
+          gap: var(--space-8);
+        }
+      
+        .form-label {
+          font-size: 0.95rem;
+          margin-bottom: var(--space-3);
+        }
+      
+        .form-input, .form-select {
+          padding: var(--space-5) var(--space-6);
+          border-radius: var(--radius-xl);
+        }
+      
+        .search-btn {
+          padding: var(--space-6);
+          border-radius: 1.125rem;
+          font-size: 1.1rem;
+          margin-top: var(--space-4);
+          box-shadow: 0 0.75rem 2.5rem rgba(139, 92, 246, 0.3);
+        }
+      
+        .quick-filters {
+          margin: var(--space-8) 0;
+          padding-top: var(--space-8);
+        }
+      
+        .filters-title {
+          font-size: var(--font-base);
+        }
+      
+        .filter-tags {
+          gap: var(--space-3);
+        }
+      
+        .filter-tag {
+          padding: 0.625rem var(--space-5);
+          border-radius: 1.5625rem;
+          font-size: var(--font-sm);
+        }
+      }
