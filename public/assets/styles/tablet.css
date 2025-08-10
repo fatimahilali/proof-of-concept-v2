@@ -30,7 +30,7 @@
         margin-top: -1rem;
         }
 
-    
+
         .user-actions {
           gap: var(--space-4);
         }
@@ -48,6 +48,51 @@
         .container {
           padding: 0 var(--space-8);
         }
-      }
+      
 
+
+        .hero::before {
+          width: 50rem;
+          height: 50rem;
+        }
+      
+        .hero h1 {
+          font-size: clamp(var(--font-5xl), 8vw, 5rem);
+          margin-bottom: var(--space-6);
+        }
+      
+        .hero-description {
+          font-size: 1.375rem;
+          margin-bottom: var(--space-12);
+          max-width: 40.625rem;
+        }
+      
+        .hero-stats {
+          flex-direction: row;
+          justify-content: center;
+          gap: var(--space-16);
+          margin-top: var(--space-12);
+        }
+      
+        .hero-stats .stat-item {
+          border-radius: var(--radius-2xl);
+          padding: var(--space-8) var(--space-6);
+          width: auto;
+        }
+      
+        .stat-label {
+          font-size: 0.9rem;
+        }
+      
+        .stat-number {
+          font-size: 2.5rem;
+        }
+      
+        .hero-image {
+          margin-top: var(--space-12);
+        }
+        .hero-image img {
+          max-width: 16.25rem;
+          filter: drop-shadow(0 0.625rem 1.875rem rgba(139, 92, 246, 0.3));
+        }
       
