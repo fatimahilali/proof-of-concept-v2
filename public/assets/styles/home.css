@@ -616,3 +616,10 @@ background: rgba(139, 92, 246, 0.05);
   white-space: nowrap;
   border: 0;
 }
+
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
