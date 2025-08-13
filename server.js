@@ -64,6 +64,19 @@ app.get('/', async function (req, res) {
 });
 
   
+
+// ID van ingelogde gebruiker 
+app.post('/like/:id', async (req, res) => {
+  await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ milledoni_users_id: 2, milledoni_products_id: req.params.id })
+  });
+  res.redirect('/');
+});
+
+
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
 app.set('port', process.env.PORT || 8000)
