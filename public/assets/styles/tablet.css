@@ -213,32 +213,6 @@
     font-size: 1.1rem;
   }
 
-  .cta-section {
-    margin: var(--space-20) 0;
-  }
-
-  .cta-card {
-    padding: var(--space-16) var(--space-12);
-    border-radius: var(--radius-4xl);
-    box-shadow: 0 1.5rem 4rem rgba(139, 92, 246, 0.3);
-  }
-
-  .cta-card h2 {
-    font-size: 2.5rem;
-  }
-
-  .cta-description {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    max-width: 37.5rem;
-  }
-
-  .cta-btn {
-    padding: var(--space-5) 2.5rem;
-    border-radius: 1.125rem;
-    font-size: 1.1rem;
-  }
-
   .search-btn .loading-spinner {
     width: var(--space-5);
     height: var(--space-5);
