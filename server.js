@@ -1,9 +1,3 @@
-// Bronnen:
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-
-
 
 // Importeer het npm package Express (uit de door npm aangemaakte node_modules map)
 // Deze package is geïnstalleerd via `npm install`, en staat als 'dependency' in package.json
@@ -32,38 +26,58 @@ app.set('views', './views')
 
 
 
-// Haal de naam en image op
-app.get('/', async function (req, res) {
+
+// Bronnen:
+// - Promise.all: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+// - Array.reduce: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce  
+// - Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch_API
+// - Directus Items API: https://directus.io/docs/api/items
+// - Directus Query Parameters: https://directus.io/docs/guides/connect/query-parameters
+// - sprint 10 
+// - ChatGPT
+
+
+
+app.get('/', async (req, res) => {
   try {
-    // Vraag de data op van de API
-    const apiResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=name,image,img.width,img.height&sort=id');
-    
-    // Controleer of het antwoord van de API goed is
-    if (!apiResponse.ok) {
-      throw new Error(`API gaf een fout: ${apiResponse.status} ${apiResponse.statusText}`);
-    }
-    
-    // Zet de response om naar JSON
-    const productData = await apiResponse.json();
-    
-    // Controleer of de data bestaat
-    if (!productData || !productData.data) {
-      throw new Error('Geen productdata ontvangen van de API.');
-    }
-    
-    // Render de indexpagina met de data
-    res.render('index.liquid', { productList: productData.data });
-    
-  } catch (error) {
-    // Log de fout in de console
-    console.error('Fout bij ophalen producten:', error.message);
-    
-    // Stuur  foutmelding
-    res.status(500).send('Er ging iets mis bij het ophalen van de producten.');
+    // Data parallel ophalen 
+    const [productRes, likeRes] = await Promise.all([
+      fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,name,image,img.width,img.height&sort=id'),
+      fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1/?fields=milledoni_products_id')
+    ]);
+
+
+   // Status checks - controleer of requests succesvol waren
+   if (!productRes.ok) throw new Error(`Products HTTP ${productRes.status}`);
+    if (!likeRes.ok) throw new Error(`Likes HTTP ${likeRes.status}`);
+
+    // Data arrays uit JSON responses halen
+    const { data: products = [] } = await productRes.json();
+    const { data: likes = [] } = await likeRes.json();
+
+    // Likes tellen per product-id
+    const likeCounts = likes.reduce((acc, row) => {
+      const id = row?.milledoni_products_id;
+      if (id != null) acc[id] = (acc[id] || 0) + 1;
+      return acc;
+    }, {});
+
+    // Likes toevoegen aan elk product 
+    const productList = products.map(p => ({
+      ...p,
+      likes: likeCounts[p.id] || 0
+    }));
+
+   // Renderen naar template
+   res.render('index.liquid', { productList });
+
+  } catch (err) {
+    console.error('Fout bij ophalen data:', err);
+    res.status(500).send('Er ging iets mis bij het ophalen van de data.');
   }
 });
 
-  
+
 
 // ID van ingelogde gebruiker 
 app.post('/like/:id', async (req, res) => {
@@ -85,3 +99,7 @@ app.set('port', process.env.PORT || 8000)
 app.listen(app.get('port'), function () {
 console.log(`Server running at http://localhost:${app.get('port')}`)
 })
+
+
+
+
