@@ -580,124 +580,68 @@ select {
 }
 
 
-/* bron https://freefrontend.com/ */
 
-/* Container */
-.heart-container {
-  --heart-color: #ff5b89;
-  width: 2rem;
-  height: 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
+
+
+
+
+
+
+
+
+/* ===== LOADING STATES - MOBILE FIRST ===== */
+.search-btn {
   position: relative;
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
 }
 
-
-/* Checkbox (klikbaar maar onzichtbaar) */
-.heart-container .checkbox {
+.search-btn .loading-spinner {
   position: absolute;
-  inset: 0;
-  opacity: 0;
-  z-index: 2;
-  cursor: pointer;
-}
-
-/* SVG wrapper  */
-.heart-container .svg-container {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  pointer-events: none; /* zodat klikken altijd de checkbox raakt */
-}
-
-/* Outline  */
-.heart-container .svg-outline {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: var(--heart-color);
-  stroke-width: 1px;
-}
-
-/* Gevuld hartje (verborgen totdat checked) */
-.heart-container .svg-filled {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none;
-  fill: var(--heart-color);
-  animation: keyframes-svg-filled 0.6s;
-}
-
-/* Confetti effect (verborgen totdat checked) */
-.heart-container .svg-celebrate {
-  position: absolute;
-  display: none;
-  stroke: var(--heart-color);
-  fill: var(--heart-color);
-  stroke-width: 1.5px;
-  animation: keyframes-svg-celebrate 0.5s forwards;
-}
-
-
-/* Animaties */
-@keyframes keyframes-svg-filled {
-  0%   { transform: scale(0); }
-  25%  { transform: scale(1.2); }
-  50%  { transform: scale(1); filter: brightness(1.5); }
-}
-
-@keyframes keyframes-svg-celebrate {
-  0%   { transform: scale(0); }
-  50%  { opacity: 1; filter: brightness(1.5); }
-  100% { transform: scale(1.4); opacity: 0; }
-}
-
-/*  visuele feedback tijdens click/focus */
-.heart-container:active .svg-filled,
-.heart-container:focus-within .svg-filled {
-  display: block;
-}
-.heart-container:active .svg-outline,
-.heart-container:focus-within .svg-outline {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0.125rem solid rgba(255, 255, 255, 0.3);
+  border-top: 0.125rem solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
   display: none;
 }
 
-
-/* Toggle bij aanklikken */
-.heart-container .checkbox:checked + .svg-container .svg-filled {
-  display: block;
-}
-.heart-container .checkbox:checked + .svg-container .svg-outline {
-  display: none;
-}
-.heart-container .checkbox:checked + .svg-container .svg-celebrate {
-  display: block;
-}
-
-/* bron : https://developer.mozilla.org/en-US/docs/Web/CSS/%40media/prefers-reduced-motion?utm */
-
-/* Respecteer reduce motion: zet animaties uit indien gewenst door gebruiker */
-@media (prefers-reduced-motion: reduce) {
-  .heart-container * {
-    animation: none ;
-    transition: none ;
+@media (min-width: 48rem) {
+  .search-btn .loading-spinner {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 
-
-.likes-stat .stat-row {
-  display:inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+.search-btn.loading .btn-text {
+  opacity: 0;
+}
+
+.search-btn.loading .loading-spinner {
+  display: block;
+}
+
+.search-btn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+
+
+<script>
+  document.querySelector('.gift-search-form').addEventListener('submit', function() {
+    const submitBtn = this.querySelector('.search-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+
+// Start loading state
+    submitBtn.classList.add('loading');
+    btnText.textContent = 'Zoeken naar cadeaus...';
+  });
+</script>
