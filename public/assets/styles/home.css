@@ -116,6 +116,7 @@ background: rgba(139, 92, 246, 0.05);
 }
 
 /* KNOP STIJLEN MOBILE FIRST */
+/* BASIS KNOP */
 .btn {
   padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-lg);
@@ -132,25 +133,33 @@ background: rgba(139, 92, 246, 0.05);
   overflow: hidden;
 }
 
-.btn-secondary {
+/* VARIANT: PRIMARY */
+.btn--primary {
+  background: var(--gradient-primary);
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn--primary:hover {
+  box-shadow: var(--shadow-primary-hover);
+  transform: translateY(-0.125rem);
+}
+
+/* VARIANT: SECONDARY */
+.btn--secondary {
   background: var(--bg-glass);
   color: var(--text-muted);
   border: 0.125rem solid var(--border-primary);
   backdrop-filter: var(--blur-sm);
 }
 
-.btn-secondary:hover {
+.btn--secondary:hover {
   background: var(--bg-glass-strong);
   border-color: var(--border-primary-hover);
   transform: translateY(-0.125rem);
   box-shadow: 0 var(--space-2) 1.5625rem rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary {
-  background: var(--gradient-primary);
-  color:var(--color);
-  box-shadow:var(--shadow-primary);
-}
 
 
 /* MAIN CONTAINER MOBILE FIRST */
@@ -674,7 +683,7 @@ select {
 
 
 .likes-stat .stat-row {
-  display: inline-flex; ;
+  display:inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
