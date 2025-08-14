@@ -332,77 +332,73 @@
 
         <footer class="product-info">
 
-          <!-- Productnaam als kop -->
-          <h3 class="product-title">{{ product.name }}</h3>
+        <!-- Productnaam als kop -->
+<h3 class="product-title">{{ product.name }}</h3>
 
-          <!-- Container voor productstatistieken -->
-          <div class="product-stats">
-            <dl>
-              <!-- Saves statistiek -->
-              <dt class="visually-hidden">Saves</dt>
-              <dd class="stat-item saves-stat {% if product.saves == 0 %}empty-state{% endif %}">
-                {% if product.saves > 0 %}
-                  {{ product.saves }} saves
-                {% else %}
-                  Nog geen saves
-                {% endif %}
-              </dd>
+<!-- Container voor productstatistieken -->
+<div class="product-stats">
+  <dl>
+    <!-- https://freefrontend.com/css-animations/ -->
 
-              <!-- https://freefrontend.com/css-animations/ -->
+    <!-- Likes statistiek met interactie -->
+    <dt class="visually-hidden">Likes</dt>
+    <dd class="stat-item likes-stat {% if product.likes == 0 %}empty-state{% endif %}">
+      <div class="stat-row">
+        <form method="post" action="/like/{{ product.id }}" class="like-form">
+          <button type="submit" class="heart-container" title="Like">
+            <div class="svg-container">
+              <!-- Outline hart -->
+              <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,
+                         6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,
+                         0,8.967c0,4.547,4.786,9.513,8.8,12.88
+                         a4.974,4.974,0,0,0,6.4,0
+                         C19.214,18.48,24,13.514,24,8.967
+                         A6.8,6.8,0,0,0,17.5,1.917Z
+                         m-3.585,18.4a2.973,2.973,0,0,1-3.83,0
+                         C4.947,16.006,2,11.87,2,8.967
+                         a4.8,4.8,0,0,1,4.5-5.05
+                         A4.8,4.8,0,0,1,11,8.967
+                         a1,1,0,0,0,2,0
+                         a4.8,4.8,0,0,1,4.5-5.05
+                         A4.8,4.8,0,0,1,22,8.967
+                         C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+              </svg>
+              <!-- Gevuld hart -->
+              <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,
+                         6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,
+                         0,8.967c0,4.547,4.786,9.513,8.8,12.88
+                         a4.974,4.974,0,0,0,6.4,0
+                         C19.214,18.48,24,13.514,24,8.967
+                         A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+              </svg>
+              <!-- animatie -->
+              <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <polygon points="10,10 20,20"></polygon>
+                <polygon points="10,50 20,50"></polygon>
+                <polygon points="20,80 30,70"></polygon>
+                <polygon points="90,10 80,20"></polygon>
+                <polygon points="90,50 80,50"></polygon>
+                <polygon points="80,80 70,70"></polygon>
+              </svg>
+            </div>
+          </button>
+        </form>
 
-              <!-- Likes statistiek met interactie -->
-              <dt class="visually-hidden">Likes</dt>
-              <dd class="stat-item likes-stat">
-                <div class="stat-row">
-                  <form method="post" action="/like/{{ product.id }}" class="like-form">
-                    <button type="submit" class="heart-container" title="Like">
-                      
-                    <div class="svg-container">
-                        <!-- Outline hart -->
-                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,
-                                   6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,
-                                   0,8.967c0,4.547,4.786,9.513,8.8,12.88
-                                   a4.974,4.974,0,0,0,6.4,0
-                                   C19.214,18.48,24,13.514,24,8.967
-                                   A6.8,6.8,0,0,0,17.5,1.917Z
-                                   m-3.585,18.4a2.973,2.973,0,0,1-3.83,0
-                                   C4.947,16.006,2,11.87,2,8.967
-                                   a4.8,4.8,0,0,1,4.5-5.05
-                                   A4.8,4.8,0,0,1,11,8.967
-                                   a1,1,0,0,0,2,0
-                                   a4.8,4.8,0,0,1,4.5-5.05
-                                   A4.8,4.8,0,0,1,22,8.967
-                                   C22,11.87,19.053,16.006,13.915,20.313Z">
-                          </path>
-                        </svg>
-                        <!-- Gevuld hart -->
-                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,
-                                   6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,
-                                   0,8.967c0,4.547,4.786,9.513,8.8,12.88
-                                   a4.974,4.974,0,0,0,6.4,0
-                                   C19.214,18.48,24,13.514,24,8.967
-                                   A6.8,6.8,0,0,0,17.5,1.917Z">
-                          </path>
-                        </svg>
-                        <!--  animatie -->
-                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <polygon points="10,10 20,20"></polygon>
-                          <polygon points="10,50 20,50"></polygon>
-                          <polygon points="20,80 30,70"></polygon>
-                          <polygon points="90,10 80,20"></polygon>
-                          <polygon points="90,50 80,50"></polygon>
-                          <polygon points="80,80 70,70"></polygon>
-                        </svg>
-                      </div>
-                    </button>
-                  </form>
-                  <span class="likes-count">{{ product.likes | default: 0 }} likes</span>
-                </div>
-              </dd>
-            </dl>
-          </div>
+        <!-- Tekst alleen tonen afhankelijk van aantal likes -->
+        <span class="likes-count">
+          {% if product.likes > 0 %}
+            {{ product.likes }} likes
+          {% else %}
+            Nog geen likes
+          {% endif %}
+        </span>
+      </div>
+    </dd>
+  </dl>
+</div>
+
         </footer>
       </article>
     {% endfor %}

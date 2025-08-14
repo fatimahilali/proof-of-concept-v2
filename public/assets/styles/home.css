@@ -674,7 +674,7 @@ select {
 
 
 .likes-stat .stat-row {
-  display: flex;
+  display: inline-flex; ;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }

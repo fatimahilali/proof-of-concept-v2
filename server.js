@@ -26,7 +26,6 @@ app.set('views', './views')
 
 
 
-
 // Bronnen:
 // - Promise.all: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 // - Array.reduce: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce  
@@ -35,7 +34,6 @@ app.set('views', './views')
 // - Directus Query Parameters: https://directus.io/docs/guides/connect/query-parameters
 // - sprint 10 
 // - ChatGPT
-
 
 
 app.get('/', async (req, res) => {
