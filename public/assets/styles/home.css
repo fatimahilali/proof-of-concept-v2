@@ -116,7 +116,6 @@ background: rgba(139, 92, 246, 0.05);
 }
 
 /* KNOP STIJLEN MOBILE FIRST */
-/* BASIS KNOP */
 .btn {
   padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-lg);
@@ -583,19 +582,24 @@ select {
 
 /* bron https://freefrontend.com/ */
 
-/* Container  */
+/* Container */
 .heart-container {
-  --heart-color: #ff5b89;    
-  width: 2rem;               
+  --heart-color: #ff5b89;
+  width: 2rem;
   height: 2rem;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   vertical-align: middle;
   position: relative;
-  background: transparent;   
-  border: none;              
+  background: transparent;
+  border: none;
   padding: 0;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
+
 
 /* Checkbox (klikbaar maar onzichtbaar) */
 .heart-container .checkbox {
@@ -606,15 +610,16 @@ select {
   cursor: pointer;
 }
 
-/* SVG wrapper */
+/* SVG wrapper  */
 .heart-container .svg-container {
   width: 100%;
   height: 100%;
   display: grid;
   place-items: center;
+  pointer-events: none; /* zodat klikken altijd de checkbox raakt */
 }
 
-/* Outline standaard roze */
+/* Outline  */
 .heart-container .svg-outline {
   position: absolute;
   width: 100%;
@@ -624,7 +629,7 @@ select {
   stroke-width: 1px;
 }
 
-/* Gevuld hartje */
+/* Gevuld hartje (verborgen totdat checked) */
 .heart-container .svg-filled {
   position: absolute;
   width: 100%;
@@ -634,7 +639,7 @@ select {
   animation: keyframes-svg-filled 0.6s;
 }
 
-/* Confetti effect */
+/* Confetti effect (verborgen totdat checked) */
 .heart-container .svg-celebrate {
   position: absolute;
   display: none;
@@ -644,18 +649,6 @@ select {
   animation: keyframes-svg-celebrate 0.5s forwards;
 }
 
-/* Toggle bij aanklikken */
-.heart-container .checkbox:checked ~ .svg-container .svg-filled {
-  display: block;
-}
-
-.heart-container .checkbox:checked ~ .svg-container .svg-outline {
-  display: none;
-}
-
-.heart-container .checkbox:checked ~ .svg-container .svg-celebrate {
-  display: block;
-}
 
 /* Animaties */
 @keyframes keyframes-svg-filled {
@@ -670,15 +663,36 @@ select {
   100% { transform: scale(1.4); opacity: 0; }
 }
 
-/* Interactie via toetsenbord/muisklik */
+/*  visuele feedback tijdens click/focus */
 .heart-container:active .svg-filled,
-.heart-container:focus .svg-filled {
+.heart-container:focus-within .svg-filled {
+  display: block;
+}
+.heart-container:active .svg-outline,
+.heart-container:focus-within .svg-outline {
+  display: none;
+}
+
+
+/* Toggle bij aanklikken */
+.heart-container .checkbox:checked + .svg-container .svg-filled {
+  display: block;
+}
+.heart-container .checkbox:checked + .svg-container .svg-outline {
+  display: none;
+}
+.heart-container .checkbox:checked + .svg-container .svg-celebrate {
   display: block;
 }
 
-.heart-container:active .svg-outline,
-.heart-container:focus .svg-outline {
-  display: none;
+/* bron : https://developer.mozilla.org/en-US/docs/Web/CSS/%40media/prefers-reduced-motion?utm */
+
+/* Respecteer reduce motion: zet animaties uit indien gewenst door gebruiker */
+@media (prefers-reduced-motion: reduce) {
+  .heart-container * {
+    animation: none ;
+    transition: none ;
+  }
 }
 
 
