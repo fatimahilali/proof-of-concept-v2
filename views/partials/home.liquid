@@ -420,22 +420,26 @@
 
 
 
+
 <script>
-  document.querySelector('.gift-search-form').addEventListener('submit', function(e) {
-    e.preventDefault(); 
-    
-    const submitBtn = this.querySelector('.search-btn');
-    const btnText = submitBtn.querySelector('.btn-text');
-    
-    submitBtn.classList.add('loading');
-    btnText.textContent = 'Zoeken naar cadeaus...';
-    
-    //bron: https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
-    // Na 2 seconden weer resetten
-    setTimeout(() => {
-      submitBtn.classList.remove('loading');
-      btnText.textContent = 'Vind Perfecte Cadeaus';
-    }, 2000);
-  });
+document.querySelector('.gift-search-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const submitBtn = this.querySelector('.search-btn');
+  const btnText = submitBtn.querySelector('.btn-text');
+  submitBtn.classList.add('loading');
+  btnText.textContent = 'Zoeken naar cadeaus...';
   
+  //bron: https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
+  // Na 2 seconden naar success state
+  setTimeout(() => {
+    submitBtn.classList.remove('loading');
+    btnText.textContent = 'Cadeaus gevonden! ✓';
+    
+    // Na 3 seconden terug naar normaal
+    //bron stukje https://css-loaders.com/spinner/
+    setTimeout(() => {
+      btnText.textContent = 'Vind Perfecte Cadeaus';
+    }, 3000);
+  }, 2000);
+});
 </script>
