@@ -1,6 +1,18 @@
 /* MILLEDONI: custom properties */
 
+@font-face {
+  font-family: 'Cairo';
+  src: url('/assets/fonts/Cairo.woff2') format('woff2'),
+       url('/assets/fonts/Cairo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
 body {
+  
   
   /* KLEUREN */
   --primary: #8b5cf6;
