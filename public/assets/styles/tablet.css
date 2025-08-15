@@ -1,3 +1,9 @@
+/*bronnen:
+https://css-tricks.com/snippets/css/gradient-text/
+https://frontendmasters.com/blog/view-transition-list-reordering-with-a-kick-flip/
+
+*/
+
 
 /* TABLET BREAKPOINT (768px) */
 @media (min-width: 48rem) {
@@ -217,4 +223,26 @@
     width: var(--space-5);
     height: var(--space-5);
   }
+
+/* Basis transitions voor hover effecten */
+ .filter-tag {
+  transition: all 0.3s ease;
+}
+
+.filter-tag:hover,
+.filter-tag:focus {
+  scale: 1.02;
+  background: var(--gradient-primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Product card hover effecten */
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  scale: 1.01;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
 }
