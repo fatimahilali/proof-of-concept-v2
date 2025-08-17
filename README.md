@@ -1,34 +1,180 @@
-Ontwerp en maak een data driven online concept voor een opdrachtgever
+# Milledoni  Cadeauwebsite
 
-De instructies voor deze opdracht staan in: [docs/INSTRUCTIONS.md](https://github.com/fdnd-task/proof-of-concept/blob/main/docs/INSTRUCTIONS.md)
+Een website waar gebruikers het perfecte cadeau kunnen vinden door een formulier in te vullen. De website toont cadeaus die gebruikers kunnen liken.
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+## Video demo
 
-## Inhoudsopgave
+**Desktop versie**  
+ [Bekijk de demo-video (MP4)](./public/assets/images/video.mp4)
 
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
 
-## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+**Mobiele versie**  
+[📱 Bekijk mobiele demo](vid.mp4)
 
-## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+## Wat doet de website?
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+- Gebruikers vullen een formulier in (voor wie, welke gelegenheid, budget)
+- Website toont passende cadeaus  
+- Gebruikers kunnen cadeaus liken met een hartje
+- Filters om snel categorieën te bekijken (trending, luxe, etc.)
+
+## Belangrijke features
+
+### 1. Zoekformulier
+
+Gebruikers kunnen aangeven:
+
+- Voor wie het cadeau is (partner, vriend, familie)
+- Welke gelegenheid (verjaardag, kerst, valentijn)
+- Hun budget
+- Beschrijving van de persoon
+
+**Code voorbeeld:**
+
+```html
+<select id="persoon" name="persoon" required>
+ <option value="partner">Mijn partner</option>
+ <option value="vriend">Beste vriend(in)</option>
+ <option value="familie">Familielid</option>
+</select>
+
+```
+
+### 2. Loading animatie bij zoeken
+
+Wanneer iemand het formulier verstuurt:
+
+- Button toont "Zoeken naar cadeaus..." met een spinner
+- Na 2 seconden: "Cadeaus gevonden! ✓"
+- Daarna terug naar normale tekst
+
+**JavaScript code:**
+
+```javascript
+
+document.querySelector('.gift-search-form').addEventListener('submit', function(e) {
+ e.preventDefault();
+ const btnText = submitBtn.querySelector('.btn-text');
+ btnText.textContent = 'Zoeken naar cadeaus...';
+ 
+ setTimeout(() => {
+   btnText.textContent = 'Cadeaus gevonden! ✓';
+ }, 2000);
+});
+```
+
+### 3. Like systeem
+
+- Gebruikers kunnen op een hartje klikken
+- Hart wordt gevuld en er verschijnt een animatie
+- Like wordt opgeslagen in de database via Directus
+
+**Form voor likes:**
+
+```html
+<form method="post" action="/like/{{ product.id }}">
+ <input type="checkbox" onchange="this.form.submit()">
+</form>
+
+```
+
+### 4. Filter buttons
+
+Knoppen voor verschillende categorieën:
+
+- Trending, Luxe, Creatief, Eetbaar, Wonen, Last-minute
+- Actieve filter wordt wit met paarse achtergrond
+
+**CSS voor actieve filter:**
+
+```css
+.filter-tag.active {
+ background: var(--gradient-primary);
+ color: white !important;
+}
+```
+
+## Backend & Database
+
+**Server setup met Express:**
+
+```javascript
+
+import express from 'express';
+import { Liquid } from 'liquidjs';
+
+const app = express();
+app.engine('liquid', engine.express());
+```
+
+**Data ophalen van Directus:**
+
+```javascript
+
+const [productRes, likeRes] = await Promise.all([
+ fetch('https://fdnd-agency.directus.app/items/milledoni_products/'),
+ fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1/')
+]);
+```
+
+## UX Design principes
+
+Voor de volledige UX implementatie en design keuzes, zie [user story #29](https://github.com/users/fatimahilali/projects/17/views/1?pane=issue&itemId=124535275&issue=fatimahilali%7Cproof-of-concept-v2%7C29).
+
+## Technische details
+
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js met Express
+- **Database:** Directus CMS
+- **Templates:** Liquid template
+- **Styling:** CSS met custom properties, responsive design
 
 ## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+
+Volg deze stappen om het project lokaal te draaien:
+
+### 1️⃣ Clone de repository
+
+Open je terminal en voer het volgende commando uit:
+
+```bash
+git clone https://github.com/fatimahilali/proof-of-concept-v2.git
+cd concept-v2
+
+```
+
+2️⃣ Installeer de afhankelijkheden
+
+Installeer alle benodigde packages met:
+
+```bash
+npm install
+```
+
+3️⃣ Start de applicatie
+
+```bash
+npm start
+```
+
+4️⃣ Open in je browser
+
+Ga in je browser naar:
+
+```bash
+http://localhost:8000
+```
+
+Nu draait je project lokaal!
+
+---
 
 ## Bronnen
+
+MDN Web Docs - JavaScript en CSS documentatie
+
+- CSS Loaders - Loading spinner
+- Directus Docs - API documentatie
 
 ## Licentie
 
