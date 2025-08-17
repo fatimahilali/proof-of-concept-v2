@@ -7,9 +7,8 @@ Een website waar gebruikers het perfecte cadeau kunnen vinden door een formulier
 **Desktop versie**  
  [Bekijk de demo-video (MP4)](./public/assets/images/video.mp4)
 
-
 **Mobiele versie**  
-[📱 Bekijk mobiele demo](vid.mp4)
+ [Bekijk de demo-video (MP4)](./public/assets/images/vid.mp4)
 
 ## Wat doet de website?
 
@@ -78,7 +77,7 @@ document.querySelector('.gift-search-form').addEventListener('submit', function(
 
 ```
 
-### 4. Filter buttons
+### 4. Filter buttons.
 
 Knoppen voor verschillende categorieën:
 
@@ -120,6 +119,37 @@ const [productRes, likeRes] = await Promise.all([
 ## UX Design principes
 
 Voor de volledige UX implementatie en design keuzes, zie [user story #29](https://github.com/users/fatimahilali/projects/17/views/1?pane=issue&itemId=124535275&issue=fatimahilali%7Cproof-of-concept-v2%7C29).
+
+## Ontwerpkeuzes
+
+### Kleurenschema
+
+- **Paarse gradient:** Geeft gevoel van luxe en bijzonderheid, past bij cadeaus
+- **Wit/transparant:** Clean en moderne uitstraling
+- **Hoge contrast:** Zorgt voor goede leesbaarheid
+
+### Card design
+
+- **Witte cards:** Clean en moderne uitstraling
+- **Subtiele schaduwen:** Geeft diepte en hiërarchie
+- **Afgeronde hoeken:** Vriendelijke, toegankelijke vormgeving
+
+### Gebruikersfeedback
+
+- **Loading states:** 2 seconden spinner + success bericht zorgt dat gebruikers weten wat er gebeurt
+- **Hart animatie:** Confetti effect maakt like actie leuk en logisch
+- **Hover effecten:** Duidelijke feedback dat elementen klikbaar zijn
+
+### Mobile-first benadering
+
+- **Responsive design:** Meeste gebruikers bezoeken websites op mobiel
+- **Progressive enhancement:** Basis werkt overal
+
+### Filter interface
+
+- **Snelle toegang:** Geen formulier invullen voor basis categorieën
+- **Visueel onderscheid:** Actieve filters krijgen andere kleur
+- **Eenvoudig:** Gebruikers begrijpen direct hoe het werkt
 
 ## Technische details
 
