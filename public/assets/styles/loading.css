@@ -37,7 +37,7 @@
   }
   
   .search-btn.loading .btn-text {
-    opacity: 0;
+    opacity: 0.5;
   }
   
   .search-btn.loading .loading-spinner {
