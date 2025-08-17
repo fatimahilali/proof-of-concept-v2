@@ -11,10 +11,11 @@
       grid-template-columns: 26.25rem 1fr;
       gap: var(--space-16);
     }
-  
     .search-sidebar {
       position: sticky;
       top: 8.75rem;
+      max-height: calc(100vh - 8.75rem);
+      overflow-y: auto;
     }
   } 
                     

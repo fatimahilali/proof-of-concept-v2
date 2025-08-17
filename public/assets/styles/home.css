@@ -465,16 +465,17 @@ background: rgba(139, 92, 246, 0.05);
   gap: var(--space-2);
 }
 
+
 .filter-tag {
-  padding: var(--space-2) var(--space-4);
-  background: rgba(139, 92, 246, 0.08);
-  border: 0.0625rem solid rgba(139, 92, 246, 0.2);
+  padding: var(--space-3) var(--space-5);
+  background: rgba(139, 92, 246, 0.12);
+  border: 0.0625rem solid rgba(139, 92, 246, 0.3);
   border-radius: var(--radius-2xl);
-  color: var(--primary);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: var(--weight-semibold);
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
 }
 
 .filter-tag:hover, .filter-tag.active {
