@@ -77,7 +77,7 @@ document.querySelector('.gift-search-form').addEventListener('submit', function(
 
 ```
 
-### 4. Filter buttons.
+### 4. Filter buttons
 
 Knoppen voor verschillende categorieën:
 
